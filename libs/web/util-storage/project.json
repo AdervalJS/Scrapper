@@ -1,0 +1,23 @@
+{
+  "root": "libs/web/util-storage",
+  "sourceRoot": "libs/web/util-storage/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/web/util-storage/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/web/util-storage"],
+      "options": {
+        "jestConfig": "libs/web/util-storage/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["web"]
+}

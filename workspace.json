@@ -5,6 +5,7 @@
     "scrapper-web-e2e": "apps/scrapper-web-e2e",
     "shared-assets": "libs/shared/assets",
     "shared-util-interfaces": "libs/shared/util-interfaces",
+    "web-util-storage": "libs/web/util-storage",
     "web-util-test": "libs/web/util-test"
   }
 }
