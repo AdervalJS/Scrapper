@@ -13,8 +13,12 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "web",
+                "onlyDependOnLibsWithTags": ["shared", "web"]
+              },
+              {
+                "sourceTag": "shared",
+                "onlyDependOnLibsWithTags": ["shared"]
               }
             ]
           }

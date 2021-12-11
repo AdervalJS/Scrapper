@@ -1,0 +1,15 @@
+{
+  "root": "libs/shared/util-interfaces",
+  "sourceRoot": "libs/shared/util-interfaces/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/util-interfaces/**/*.ts"]
+      }
+    }
+  },
+  "tags": ["shared"]
+}

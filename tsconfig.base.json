@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@scrapper/shared/assets": ["libs/shared/assets/src/index.ts"],
+      "@scrapper/shared/util-interfaces": [
+        "libs/shared/util-interfaces/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

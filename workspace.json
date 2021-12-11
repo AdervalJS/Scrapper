@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "scrapper-web": "apps/scrapper-web",
-    "scrapper-web-e2e": "apps/scrapper-web-e2e"
+    "scrapper-web-e2e": "apps/scrapper-web-e2e",
+    "shared-assets": "libs/shared/assets",
+    "shared-util-interfaces": "libs/shared/util-interfaces"
   }
 }
