@@ -1,0 +1,72 @@
+{
+  "root": "apps/scrapper-web",
+  "sourceRoot": "apps/scrapper-web/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/scrapper-web",
+        "index": "apps/scrapper-web/src/index.html",
+        "baseHref": "/",
+        "main": "apps/scrapper-web/src/main.tsx",
+        "polyfills": "apps/scrapper-web/src/polyfills.ts",
+        "tsConfig": "apps/scrapper-web/tsconfig.app.json",
+        "assets": [
+          "apps/scrapper-web/src/favicon.ico",
+          "apps/scrapper-web/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/scrapper-web/src/environments/environment.ts",
+              "with": "apps/scrapper-web/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "scrapper-web:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "scrapper-web:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/scrapper-web/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/scrapper-web"],
+      "options": {
+        "jestConfig": "apps/scrapper-web/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

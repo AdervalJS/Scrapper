@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "scrapper-web": "apps/scrapper-web",
+    "scrapper-web-e2e": "apps/scrapper-web-e2e"
+  }
+}
