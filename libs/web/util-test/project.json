@@ -1,0 +1,23 @@
+{
+  "root": "libs/web/util-test",
+  "sourceRoot": "libs/web/util-test/src",
+  "projectType": "library",
+  "tags": ["web"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/web/util-test/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/web/util-test"],
+      "options": {
+        "jestConfig": "libs/web/util-test/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
