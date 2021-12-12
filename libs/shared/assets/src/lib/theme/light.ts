@@ -8,7 +8,7 @@ export const light: Theme = {
   border: '#e2e2e2',
   card: '#ffffff',
   cardSecondary: 'rgb(85, 85, 85)',
-  shadow: '#3b3b3b',
+  shadow: 'rgba(0, 0, 0, 0.25)',
   text: '#000',
   secondaryText: '#646464',
 };
