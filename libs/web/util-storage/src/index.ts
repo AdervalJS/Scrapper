@@ -1,1 +1,1 @@
-export * from './lib/web-util-storage';
+export * from './lib/recentlyRead';
