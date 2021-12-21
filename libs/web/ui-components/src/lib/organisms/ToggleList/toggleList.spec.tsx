@@ -4,6 +4,7 @@ import { light, viewOrderSelect } from '@scrapper/shared/assets';
 
 import { ToggleList } from '.';
 import { TitleAndSelect } from '../../molecules/TitleAndSelect';
+import { titleAndSelectState } from '../../molecules/TitleAndSelect/titleAndSelect.test.state';
 
 const onItemClick = jest.fn((e) => {
   expect(e).toEqual(mangas[0]);
@@ -12,6 +13,7 @@ const onItemClick = jest.fn((e) => {
 function setup(header?: boolean) {
   const Header = (
     <TitleAndSelect
+      state={titleAndSelectState}
       label="header label"
       options={viewOrderSelect}
       theme={light}

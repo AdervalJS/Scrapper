@@ -2,13 +2,19 @@ import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/dom';
 import { viewOrderSelect } from '@scrapper/shared/assets';
 import { customRender } from '@scrapper/web/util-test';
+
+import { titleAndSelectState } from './titleAndSelect.test.state';
 import { TitleAndSelect } from '.';
 
 const TITLE = 'TitleAndSelect';
 
 function setup() {
   return customRender(
-    <TitleAndSelect label={TITLE} options={viewOrderSelect} />
+    <TitleAndSelect
+      state={titleAndSelectState}
+      label={TITLE}
+      options={viewOrderSelect}
+    />
   );
 }
 
