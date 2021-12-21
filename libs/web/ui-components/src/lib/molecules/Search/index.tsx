@@ -19,7 +19,6 @@ export const Search: React.FC<SearchProps> = ({
 }) => {
   const [value, setValue] = useState(searchValue);
   const theme = useTheme() as Theme;
-  console.log();
 
   function handleSearch(e: KeyboardEvent<HTMLInputElement>) {
     const { key } = e;
