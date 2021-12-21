@@ -1,5 +1,4 @@
-import Input from './lib/atoms/Input';
-
+export * from './lib/atoms/Input';
 export * from './lib/atoms/Card';
 export * from './lib/atoms/GradientCard';
 export * from './lib/atoms/Button';
@@ -23,6 +22,5 @@ export * from './lib/atoms/ItemName';
 export * from './lib/atoms/Input';
 export * from './lib/atoms/ArrowRightIcon';
 export * from './lib/atoms/Link';
-export * from './lib/molecules/Truncate';
+export * from './lib/atoms/Truncate';
 
-export { Input };
