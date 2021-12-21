@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
-import { DropSelectOptions } from '.';
+import { DropSelectSelecteds } from '.';
 
-export const dropSelectState = atom<DropSelectOptions>({
+export const dropSelectState = atom<DropSelectSelecteds>({
   key: 'dropSelect-test',
   default: [],
 });

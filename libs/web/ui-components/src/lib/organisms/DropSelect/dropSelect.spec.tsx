@@ -51,4 +51,16 @@ describe('dropSelect', () => {
 
     expect(firstElement.selected).toEqual(false);
   });
+
+  it('o valor da segunda opção deveria esta como padrão', () => {
+    const { getAllById } = setup({
+      defaultSelecteds: [viewOrderSelect[1].value],
+    });
+
+    const secondaryElement = getAllById(
+      'dropSelectOption'
+    )[1] as HTMLOptionElement;
+
+    expect(secondaryElement.selected).toEqual(true);
+  });
 });

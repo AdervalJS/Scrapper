@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRecoilState, RecoilState } from 'recoil';
 import { DropSelectButton } from '../../molecules/DropSelectButton';
 import { DropSelectOption, Option } from '../../molecules/DropSelectOption';
@@ -8,13 +8,16 @@ import { Container, ContainerProps, Content } from './dropSelect.styles';
 
 export type DropSelectOptions = Option[];
 
-export type DropSelectState = RecoilState<DropSelectOptions>;
+export type DropSelectState = RecoilState<DropSelectSelecteds>;
 
-export interface DropSelectProps extends ContainerProps {
+export type DropSelectSelecteds = string[];
+
+export interface DropSelectProps extends Omit<ContainerProps, 'default'> {
   title: string;
   options: DropSelectOptions;
   state: DropSelectState;
   enableToggle?: boolean;
+  defaultSelecteds?: DropSelectSelecteds;
 }
 
 export const DropSelect: React.FC<DropSelectProps> = ({
@@ -23,10 +26,15 @@ export const DropSelect: React.FC<DropSelectProps> = ({
   options,
   theme,
   enableToggle,
+  defaultSelecteds,
   ...rest
 }) => {
   const [selecteds, setSelecteds] = useRecoilState(state);
   const [compacted, setCompacted] = useState(false);
+
+  useEffect(() => {
+    if (defaultSelecteds) setSelecteds(defaultSelecteds);
+  }, []);
 
   function toggleCompacted() {
     setCompacted(!compacted);
@@ -51,7 +59,7 @@ export const DropSelect: React.FC<DropSelectProps> = ({
             theme={theme}
             option={option}
             key={option.label}
-            selected={selecteds?.includes(option)}
+            selected={selecteds?.includes(String(option.value))}
             onPick={handleClick}
           />
         ))}

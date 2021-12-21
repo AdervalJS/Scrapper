@@ -5,11 +5,11 @@ import { Container, ContainerProps } from './filters.styles';
 
 export type FilterData = Pick<
   DropSelectProps,
-  'title' | 'options' | 'state' | 'enableToggle'
->;
+  'title' | 'options' | 'state' | 'enableToggle' | 'defaultSelecteds'
+>[];
 
 export interface FiltersProps extends ContainerProps {
-  data: FilterData[];
+  data: FilterData;
 }
 
 export const Filters: React.FC<FiltersProps> = ({
