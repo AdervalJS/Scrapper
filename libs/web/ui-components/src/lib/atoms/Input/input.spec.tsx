@@ -1,12 +1,30 @@
+import { ChangeEvent, useState } from 'react';
 import { customRender } from '@scrapper/web/util-test';
 import { act, fireEvent } from '@testing-library/react';
-import { InputElementForTest, placeholder } from './input.data';
+
+import { Input } from '.';
+
+export const PLACEHOLDER = 'search';
+
+export function InputElementForTest() {
+  const [value, setValue] = useState('');
+
+  const handleChange = (ev: ChangeEvent<HTMLInputElement>) => {
+    ev.preventDefault();
+
+    setValue(ev.target.value);
+  };
+
+  return (
+    <Input value={value} placeholder={PLACEHOLDER} onChange={handleChange} />
+  );
+}
 
 describe('input', () => {
   it('deveria ter um placeholder', () => {
     const { getByPlaceholderText } = customRender(<InputElementForTest />);
 
-    expect(getByPlaceholderText(placeholder)).toBeTruthy();
+    expect(getByPlaceholderText(PLACEHOLDER)).toBeTruthy();
   });
 
   it('as mudanças no texto deveriam ser reconhecidas', () => {
@@ -16,8 +34,8 @@ describe('input', () => {
     const inputValue = 'input';
 
     act(() => {
-      fireEvent.focus(getByPlaceholderText(placeholder));
-      fireEvent.change(getByPlaceholderText(placeholder), {
+      fireEvent.focus(getByPlaceholderText(PLACEHOLDER));
+      fireEvent.change(getByPlaceholderText(PLACEHOLDER), {
         target: { value: inputValue },
       });
     });
