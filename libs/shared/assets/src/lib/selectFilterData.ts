@@ -17,7 +17,7 @@ export const viwFilter: Filter = {
       value: 'DESC',
     },
     {
-      label: 'Menos populares Atualizados',
+      label: 'Menos populares',
       value: 'ASC',
     },
   ],
