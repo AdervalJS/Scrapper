@@ -3,6 +3,8 @@ import { light, viewOrderSelect } from '@scrapper/shared/assets';
 import { mangas, ThemeProviderWrapper } from '@scrapper/web/util-test';
 
 import { TitleAndSelect } from '../../molecules/TitleAndSelect';
+import { titleAndSelectState } from '../../molecules/TitleAndSelect/titleAndSelect.test.state';
+import { listTypeSelected } from './toggleList.test.state';
 import { ToggleList, ToggleListProps } from '.';
 
 export default {
@@ -14,7 +16,7 @@ const Actions: Partial<ToggleListProps> = {};
 
 const Template: Story<ToggleListProps> = (args) => (
   <ThemeProviderWrapper>
-    <ToggleList {...args} {...Actions} />
+    <ToggleList {...args} {...Actions} state={listTypeSelected} />
   </ThemeProviderWrapper>
 );
 
@@ -28,6 +30,7 @@ Secondary.args = {
   data: mangas,
   header: (
     <TitleAndSelect
+      state={titleAndSelectState}
       label="Ordenar por"
       options={viewOrderSelect}
       theme={light}

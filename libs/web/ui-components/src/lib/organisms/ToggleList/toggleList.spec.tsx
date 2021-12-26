@@ -5,6 +5,7 @@ import { light, viewOrderSelect } from '@scrapper/shared/assets';
 import { ToggleList } from '.';
 import { TitleAndSelect } from '../../molecules/TitleAndSelect';
 import { titleAndSelectState } from '../../molecules/TitleAndSelect/titleAndSelect.test.state';
+import { listTypeSelected } from './toggleList.test.state';
 
 const onItemClick = jest.fn((e) => {
   expect(e).toEqual(mangas[0]);
@@ -22,6 +23,7 @@ function setup(header?: boolean) {
 
   return customRender(
     <ToggleList
+      state={listTypeSelected}
       onItemClick={onItemClick}
       data={mangas}
       header={header ? Header : undefined}

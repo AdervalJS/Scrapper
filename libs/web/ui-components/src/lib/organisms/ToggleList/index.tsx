@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRecoilState, RecoilState } from 'recoil';
 import { useTheme } from 'styled-components';
 import { Theme } from '@scrapper/shared/util-interfaces';
 
@@ -11,8 +11,11 @@ import { Container, Header, HeaderOptions } from './toggleList.styles';
 
 export type ToggleListData = CompactItemListData;
 
+export type ToggleListType = 'compactedList' | 'simpleList'
+
 export interface ToggleListProps {
   data: ToggleListData;
+  state: RecoilState<ToggleListType>;
   header?: React.ReactNode;
   onItemClick?: (item: CompactItemListData[0] | SimpleItemLisData[0]) => void;
 }
@@ -21,11 +24,10 @@ export const ToggleList: React.FC<ToggleListProps> = ({
   data,
   header,
   onItemClick,
+  state,
   ...rest
 }) => {
-  const [typeListView, setTypeListView] = useState<
-    'compactedList' | 'simpleList'
-  >('compactedList');
+  const [typeListView, setTypeListView] = useRecoilState<ToggleListType>(state);
   const theme = useTheme() as Theme;
 
   return (
