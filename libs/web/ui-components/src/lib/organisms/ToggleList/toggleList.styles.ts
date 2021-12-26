@@ -54,7 +54,9 @@ export const Header = styled.div.attrs({
   padding: 10px;
 `;
 
-export const HeaderOptions = styled.div`
+export const HeaderOptions = styled.div.attrs({
+  className:'header-options'
+})`
   display: flex;
 
   button {
