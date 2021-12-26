@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { ThemeProviderWrapper } from '@scrapper/web/util-test';
 
-import Input, { InputProps } from '.';
+import { Input, InputProps } from '.';
 
 export default {
   title: 'atoms/Input',
