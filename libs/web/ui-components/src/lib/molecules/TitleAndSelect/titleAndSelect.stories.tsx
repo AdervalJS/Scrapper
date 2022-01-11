@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { viewOrderSelect } from '@scrapper/shared/assets';
-import { ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { ThemeProviderWrapper, RecoilWrapper } from '@scrapper/web/util-test';
 
 import { titleAndSelectState } from './titleAndSelect.test.state';
 import { TitleAndSelect, TitleAndSelectProps } from '.';
@@ -12,7 +12,9 @@ export default {
 
 const Template: Story<TitleAndSelectProps> = (args) => (
   <ThemeProviderWrapper>
-    <TitleAndSelect {...args} state={titleAndSelectState} />
+    <RecoilWrapper>
+      <TitleAndSelect {...args} state={titleAndSelectState} />
+    </RecoilWrapper>
   </ThemeProviderWrapper>
 );
 
