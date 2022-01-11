@@ -9,4 +9,7 @@ export const Container = styled(Card)<ContainerProps>`
   #dropSelect {
     margin: 5px 0px;
   }
+
+  #gradientButton {
+  }
 `;
