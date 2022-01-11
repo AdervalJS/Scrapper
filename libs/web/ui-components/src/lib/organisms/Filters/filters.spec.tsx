@@ -1,9 +1,8 @@
 import { customRender } from '@scrapper/web/util-test';
-import { Filters } from '.';
-import { FiltersContainerProps } from './filters.interfaces';
+import { Filters, FiltersProps } from '.';
 import { data } from './filters.util';
 
-function setup(props?: FiltersContainerProps) {
+function setup(props?: Partial<FiltersProps>) {
   return customRender(<Filters data={data} {...props} />);
 }
 
@@ -17,11 +16,12 @@ describe('Filters', () => {
   });
 
   it('deveria renderizar um botão', () => {
-    const value = 'save filters';
-    const children = <button>{value}</button>;
+    const label = 'save filters';
 
-    const { getByText } = setup({ children });
+    const { getByText } = setup({ extraButton: {
+       label
+    } });
 
-    expect(getByText(value)).toBeTruthy();
+    expect(getByText(label)).toBeTruthy();
   });
 });

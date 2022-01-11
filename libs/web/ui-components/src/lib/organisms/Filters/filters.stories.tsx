@@ -20,3 +20,12 @@ export const Primary = Template.bind({});
 Primary.args = {
   data,
 };
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  data,
+  extraButton: {
+    label: 'salva',
+    onClick: () => console.log('Clicked'),
+  },
+};
