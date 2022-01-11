@@ -5,7 +5,7 @@ import {
   viewOrderSelectedState,
 } from './filters.test.state';
 
-export const data: FilterData[] = [
+export const data: FilterData = [
   {
     ...viwFilter,
     state: viewOrderSelectedState,
