@@ -1,12 +1,12 @@
 import { atom } from 'recoil';
-import { DropSelectOptions } from '../DropSelect';
+import { DropSelectSelecteds } from '../DropSelect';
 
-export const genreFilterSelectedState = atom<DropSelectOptions>({
+export const genreFilterSelectedState = atom<DropSelectSelecteds>({
   key: 'genre-filter-test',
   default: [],
 });
 
-export const viewOrderSelectedState = atom<DropSelectOptions>({
+export const viewOrderSelectedState = atom<DropSelectSelecteds>({
   key: 'view-filter-test',
   default: [],
 });
