@@ -7,10 +7,13 @@ function setup() {
 }
 
 describe('Banner', () => {
-  it('deveria ter uma image', () => {
-    const { getByAltText } = setup();
+  it('deveria ter uma imagem de fundo e outra no perfil', () => {
+    const { getAllByAltText } = setup();
 
-    expect(getByAltText(manga.name)).toHaveProperty('src', manga.image);
+    const [blurryImage, Profile] = getAllByAltText(manga.name);
+
+    expect(blurryImage).toHaveProperty('src', manga.image);
+    expect(Profile).toHaveProperty('src', manga.image);
   });
 
   it('deveria ter o nome do manga', () => {
@@ -38,10 +41,12 @@ describe('Banner', () => {
   });
 
   it('os gêneros devem ser iguais aos do manga', () => {
-    const { getAllById } = setup();
+    const { getByText } = setup();
 
-    const genres = getAllById('genre').map((item) => item.textContent);
+    const { genres } = manga;
 
-    expect(genres).toEqual(manga.genres);
+    for (const genre of genres) {
+      expect(getByText(genre)).toBeTruthy();
+    }
   });
 });

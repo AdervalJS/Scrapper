@@ -16,3 +16,5 @@ export * from './lib/molecules/Search';
 export * from './lib/molecules/TitleAndSelect';
 export * from './lib/molecules/View';
 export * from './lib/molecules/CloserButton';
+export * from './lib/molecules/BaseProfile'
+export * from './lib/molecules/BlurryImage'
