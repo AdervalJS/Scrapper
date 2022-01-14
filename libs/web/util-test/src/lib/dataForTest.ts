@@ -1,4 +1,8 @@
-import { MangaBaseProps, Manga } from '@scrapper/shared/util-interfaces';
+import {
+  MangaBaseProps,
+  Manga,
+  MangaProfile,
+} from '@scrapper/shared/util-interfaces';
 
 export const baseManga: MangaBaseProps = {
   id: 1,
@@ -61,6 +65,13 @@ export const mangas: Manga[] = [
     view: 200,
   },
 ];
+
+export const mangaProfile: MangaProfile[] = mangas.map((manga) => ({
+  ...manga,
+  relation: mangas,
+  moreAuthor: mangas,
+  chapters: [{ id: 1, name: 'capitulo-1' }],
+}));
 
 export const mangasBase: MangaBaseProps[] = mangas.map(
   ({ id, name, image }) => ({ id, name, image })

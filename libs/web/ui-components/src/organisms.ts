@@ -8,4 +8,4 @@ export * from './lib/organisms/List';
 export * from './lib/organisms/BannerList';
 export * from './lib/organisms/Header';
 export * from './lib/organisms/Footer';
-
+export * from './lib/organisms/Profile';
