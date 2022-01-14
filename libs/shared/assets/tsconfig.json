@@ -1,6 +1,6 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "files": [],
+  "files": ["../../../node_modules/@nrwl/react/typings/image.d.ts"],
   "include": [],
   "references": [
     {
