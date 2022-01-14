@@ -1,4 +1,4 @@
-import { Routes, useParams, useNavigate } from 'react-router-dom';
+import { Routes, useNavigate } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import { light } from '@scrapper/shared/assets';
@@ -15,7 +15,6 @@ import {
 
 export const RoutersContainer: React.FC = ({ children }) => {
   const navigate = useNavigate();
-  const { item } = useParams();
 
   function onSearch(item: string) {
     navigate(`/search/{item}`);
@@ -27,11 +26,7 @@ export const RoutersContainer: React.FC = ({ children }) => {
 
       <Container>
         <HeaderWrapper>
-          <Header
-            searchValue={item || ''}
-            onSearch={onSearch}
-            links={HeaderLink}
-          />
+          <Header onSearch={onSearch} links={HeaderLink} />
         </HeaderWrapper>
 
         <Content>
