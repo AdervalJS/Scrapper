@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
 import { useTheme } from 'styled-components';
 import { mangas } from '@scrapper/web/util-test';
 import { Theme, MangaBaseProps } from '@scrapper/shared/util-interfaces';
@@ -30,11 +30,11 @@ const Home: React.FC = () => {
   function handleClick(props: MangaBaseProps) {
     const { chapterId, id } = props as MangaReadProp;
 
-    navigate(`/read/?${{ id }}&${{ chapterId }}`);
+    navigate(`/read/?${{ id }}?chapter=${chapterId}`);
   }
 
   function goToProfile({ id }: ItemCompactedData) {
-    navigate(`/profile/${{ id }}`);
+    navigate(`/profile/${ id }`);
   }
 
   return (
@@ -83,6 +83,8 @@ const Home: React.FC = () => {
           title="Navegue por todos os mangás"
         />
       </Banner>
+
+      <Outlet />
     </Container>
   );
 };
