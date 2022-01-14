@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { Theme } from '@scrapper/shared/util-interfaces';
 import * as template from '../template/main';
 
 export const GlobalStyles = createGlobalStyle`
@@ -8,7 +9,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export const Container = styled(template.Container)``;
+export const Container = styled(template.Container)`
+  background-color: ${({theme}:{theme:Theme}) => theme.background};
+`;
 
 export const HeaderWrapper = styled(template.HeaderWrapper)``;
 
