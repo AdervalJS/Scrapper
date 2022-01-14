@@ -16,7 +16,7 @@ export const Content = styled.div`
 
   @media only screen and (min-width: 835px) {
     & {
-      margin: MARGIN_HORIZONTAL;
+      margin: ${MARGIN_HORIZONTAL};
     }
   }
 `;
