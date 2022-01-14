@@ -17,7 +17,7 @@ export const RoutersContainer: React.FC = ({ children }) => {
   const navigate = useNavigate();
 
   function onSearch(item: string) {
-    navigate(`/search/{item}`);
+    navigate(`/search/${item}`);
   }
 
   return (
