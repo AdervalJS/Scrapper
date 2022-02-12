@@ -27,15 +27,15 @@ export const Content = styled.div.attrs({
   background: linear-gradient(
       90deg,
       ${({ theme }: { theme: Theme }) => theme.background} 0%,
-      rgba(250, 250, 250, 0.5) 33.78%,
-      rgba(250, 250, 250, 0.5) 70.1%,
+      rgba(250, 250, 250, 0.2) 33.78%,
+      rgba(250, 250, 250, 0.2) 70.1%,
       ${({ theme }: { theme: Theme }) => theme.background} 100%
     ),
     linear-gradient(
       180.14deg,
       ${({ theme }: { theme: Theme }) => theme.background} 1%,
-      rgba(250, 250, 250, 0.6) 30.53%,
-      rgba(250, 250, 250, 0.7) 39.33%,
+      rgba(250, 250, 250, 0.2) 30.53%,
+      rgba(250, 250, 250, 0.2) 39.33%,
       ${({ theme }: { theme: Theme }) => theme.background} 90%
     );
 
