@@ -2,6 +2,8 @@ import {
   MangaBaseProps,
   Manga,
   MangaProfile,
+  Chapter,
+  Page,
 } from '@scrapper/shared/util-interfaces';
 
 export const baseManga: MangaBaseProps = {
@@ -66,13 +68,47 @@ export const mangas: Manga[] = [
   },
 ];
 
-export const mangaProfile: MangaProfile[] = mangas.map((manga) => ({
-  ...manga,
-  relation: mangas,
-  moreAuthor: mangas,
-  chapters: [{ id: 1, name: 'capitulo-1' }],
-}));
+export const pages: Page[] = [
+  {
+    id: 1,
+    url: 'https://th.bing.com/th/id/R.f44a9abe269268eb00d51c809400e216?rik=kXjrPFw6pVHdvQ&pid=ImgRaw&r=0',
+    pageNumber: 1,
+  },
+  {
+    id: 2,
+    url: 'https://th.bing.com/th/id/R.2ccd18907afaae997627191bad9d9a47?rik=msIemKJxvM02wg&riu=http%3a%2f%2fimages2.fanpop.com%2fimage%2fphotos%2f13900000%2fFav-pages-bleach-manga-and-tv-13977535-750-1078.jpg&ehk=KGpzgaaOjnxWqty8AUcDEn9lX0fIdtC8Ke6F6XZXrKM%3d&risl=&pid=ImgRaw&r=0',
+    pageNumber: 2,
+  },
+  {
+    id: 3,
+    url: 'https://th.bing.com/th/id/R.f44a9abe269268eb00d51c809400e216?rik=kXjrPFw6pVHdvQ&pid=ImgRaw&r=0',
+    pageNumber: 3,
+  },
+  {
+    id: 4,
+    url: 'https://th.bing.com/th/id/R.2ccd18907afaae997627191bad9d9a47?rik=msIemKJxvM02wg&riu=http%3a%2f%2fimages2.fanpop.com%2fimage%2fphotos%2f13900000%2fFav-pages-bleach-manga-and-tv-13977535-750-1078.jpg&ehk=KGpzgaaOjnxWqty8AUcDEn9lX0fIdtC8Ke6F6XZXrKM%3d&risl=&pid=ImgRaw&r=0',
+    pageNumber: 4,
+  },
+];
 
 export const mangasBase: MangaBaseProps[] = mangas.map(
   ({ id, name, image }) => ({ id, name, image })
 );
+
+export const chapters: Chapter[] = mangasBase.map((manga, index) => ({
+  id: index + 1,
+  name: 'capitulo ' + (index + 1),
+  pages,
+  manga,
+  nextChapter: {
+    id: index + 2,
+    name: 'capitulo ' + (index + 2),
+  },
+}));
+
+export const mangaProfile: MangaProfile[] = mangas.map((manga) => ({
+  ...manga,
+  relation: mangas,
+  moreAuthor: mangas,
+  chapters: chapters,
+}));
