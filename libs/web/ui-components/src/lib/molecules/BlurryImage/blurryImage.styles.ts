@@ -22,7 +22,7 @@ export const Container = styled.aside<ContainerProps>`
 `;
 
 export const Content = styled.div.attrs({
-  className: 'content',
+  className: 'blurry-image-content',
 })`
   background: linear-gradient(
       90deg,
