@@ -24,3 +24,4 @@ export * from './lib/atoms/ArrowRightIcon';
 export * from './lib/atoms/Link';
 export * from './lib/atoms/Truncate';
 export * from './lib/atoms/CloseIcon';
+export * from './lib/atoms/Page';
