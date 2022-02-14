@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { MangaBaseProps, MangaProfile } from '@scrapper/shared/util-interfaces';
 
 import { BlurryImage } from '../../molecules/BlurryImage';
@@ -23,10 +24,24 @@ export const Profile: React.FC<ProfileProps> = ({
   relationItemClick,
   ...rest
 }) => {
+  const containerRef = useRef<HTMLElement | null>();
   const { image, name, moreAuthor, relation } = data;
 
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+  }, [data]);
+
   return (
-    <Container className="profile" {...rest}>
+    <Container
+      ref={(e) => (containerRef.current = e)}
+      className="profile"
+      {...rest}
+    >
       <CloseButton onClick={onClose} />
 
       <BlurryImage data={{ alt: name, imageUrl: image }}>
