@@ -11,9 +11,13 @@ import {
   HeaderWrapper,
   FooterWrapper,
   Content,
+  ContainerProps,
 } from './routers.styles';
 
-export const RoutersContainer: React.FC = ({ children }) => {
+export const RoutersContainer: React.FC<ContainerProps> = ({
+  children,
+  isFocused,
+}) => {
   const navigate = useNavigate();
 
   function onSearch(item: string) {
@@ -24,7 +28,7 @@ export const RoutersContainer: React.FC = ({ children }) => {
     <ThemeProvider theme={light}>
       <GlobalStyles />
 
-      <Container>
+      <Container isFocused={isFocused}>
         <HeaderWrapper>
           <Header onSearch={onSearch} links={HeaderLink} />
         </HeaderWrapper>

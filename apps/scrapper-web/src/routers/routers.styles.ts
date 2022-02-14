@@ -9,8 +9,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 `;
 
+export type ContainerProps = template.ContainerProps;
+
 export const Container = styled(template.Container)`
-  background-color: ${({theme}:{theme:Theme}) => theme.background};
+  background-color: ${({ theme }: { theme: Theme }) => theme.background};
 `;
 
 export const HeaderWrapper = styled(template.HeaderWrapper)``;
