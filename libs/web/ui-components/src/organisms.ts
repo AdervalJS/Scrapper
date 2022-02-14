@@ -10,3 +10,4 @@ export * from './lib/organisms/Header';
 export * from './lib/organisms/Footer';
 export * from './lib/organisms/Profile';
 export * from './lib/organisms/PagesList';
+export * from './lib/organisms/Chapters';
