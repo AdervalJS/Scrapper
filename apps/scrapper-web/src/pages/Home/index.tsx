@@ -30,7 +30,9 @@ const Home: React.FC = () => {
   function handleClick(props: MangaBaseProps) {
     const { chapterId, id } = props as MangaReadProp;
 
-    navigate(`/read/?${{ id }}?chapter=${chapterId}`);
+    const chapter = chapterId ? `?chapter=${chapterId}`:''
+
+    navigate(`/read/${ id }${chapter}`);
   }
 
   function goToProfile({ id }: ItemCompactedData) {
