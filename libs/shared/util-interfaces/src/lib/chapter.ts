@@ -1,4 +1,4 @@
-import { Manga } from './manga';
+import { MangaBaseProps } from './manga';
 
 export interface ChapterBaseProps {
   id: number;
@@ -6,14 +6,13 @@ export interface ChapterBaseProps {
 }
 
 export interface Chapter extends ChapterBaseProps {
-  manga: Manga;
+  manga: MangaBaseProps;
   pages: Page[];
-  nextChapter: Chapter;
+  nextChapter: ChapterBaseProps;
 }
 
 export interface Page {
   id: number;
   url: string;
   pageNumber: number;
-  chapter: Chapter;
 }
