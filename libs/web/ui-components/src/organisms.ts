@@ -9,3 +9,4 @@ export * from './lib/organisms/BannerList';
 export * from './lib/organisms/Header';
 export * from './lib/organisms/Footer';
 export * from './lib/organisms/Profile';
+export * from './lib/organisms/PagesList';
