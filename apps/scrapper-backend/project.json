@@ -1,0 +1,52 @@
+{
+  "root": "apps/scrapper-backend",
+  "sourceRoot": "apps/scrapper-backend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/scrapper-backend",
+        "main": "apps/scrapper-backend/src/main.ts",
+        "tsConfig": "apps/scrapper-backend/tsconfig.app.json",
+        "assets": ["apps/scrapper-backend/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/scrapper-backend/src/environments/environment.ts",
+              "with": "apps/scrapper-backend/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "scrapper-backend:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/scrapper-backend/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/scrapper-backend"],
+      "options": {
+        "jestConfig": "apps/scrapper-backend/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["backend"]
+}

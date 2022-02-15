@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "scrapper-backend": "apps/scrapper-backend",
     "scrapper-web": "apps/scrapper-web",
     "scrapper-web-e2e": "apps/scrapper-web-e2e",
     "shared-assets": "libs/shared/assets",
