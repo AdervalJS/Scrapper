@@ -31,6 +31,7 @@ const Routers: React.FC = () => {
       <Route path="/viewAll" element={<ViewAll />}>
         <Route path="profile/:id" element={<Profile />} />
       </Route>
+      <Route path="/read/:id" element={<Read />} />
     </RoutersContainer>
   );
 };
