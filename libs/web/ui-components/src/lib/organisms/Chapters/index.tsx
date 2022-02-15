@@ -19,14 +19,14 @@ export const Chapters: React.FC<ChaptersProps> = ({
   defaultSelectedId,
   state,
 }) => {
-  const [selected, setSelected] = useRecoilState(state);
+  const [selectedId, setSelectedId] = useRecoilState(state);
 
   useEffect(() => {
-    setSelected(defaultSelectedId);
-  }, []);
+    if (!selectedId) setSelectedId(defaultSelectedId);
+  }, [defaultSelectedId]);
 
   function handleClick({ value: id }: Option) {
-    setSelected(Number(id));
+    setSelectedId(Number(id));
   }
 
   return (
@@ -35,7 +35,7 @@ export const Chapters: React.FC<ChaptersProps> = ({
       {data.map((chapter) => (
         <DropSelectOption
           onPick={handleClick}
-          selected={chapter.id === selected}
+          selected={chapter.id === selectedId}
           option={{ label: chapter.name, value: chapter.id }}
         />
       ))}
