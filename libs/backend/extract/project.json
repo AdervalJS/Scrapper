@@ -1,0 +1,23 @@
+{
+  "root": "libs/backend/extract",
+  "sourceRoot": "libs/backend/extract/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/backend/extract/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/backend/extract"],
+      "options": {
+        "jestConfig": "libs/backend/extract/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["backend"]
+}
