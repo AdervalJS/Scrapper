@@ -2,11 +2,16 @@ import { ThemeProvider } from 'styled-components';
 import { Theme } from '@scrapper/shared/util-interfaces';
 import { light } from '@scrapper/shared/assets';
 
-export const ThemeProviderWrapper: React.FC<{ theme?: Theme }> = ({
-  theme,
-  children,
-}) => {
+interface Props {
+  theme?: Theme;
+  children: JSX.Element;
+}
+
+export const ThemeProviderWrapper: React.FC<Props> = ({ children, theme }) => {
   return (
-    <ThemeProvider theme={theme ? theme : light}>{children}</ThemeProvider>
+    <ThemeProvider
+      children={children}
+      theme={theme ? theme : light}
+    ></ThemeProvider>
   );
 };
