@@ -1,0 +1,14 @@
+{
+  "root": "libs/backend/models",
+  "sourceRoot": "libs/backend/models/src",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/backend/models/**/*.ts"]
+      }
+    }
+  },
+  "tags": ["backend"]
+}

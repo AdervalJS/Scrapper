@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "backend-extract": "libs/backend/extract",
+    "backend-models": "libs/backend/models",
     "scrapper-backend": "apps/scrapper-backend",
     "scrapper-web": "apps/scrapper-web",
     "scrapper-web-e2e": "apps/scrapper-web-e2e",
