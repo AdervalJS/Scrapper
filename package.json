@@ -9,10 +9,14 @@
   },
   "private": true,
   "dependencies": {
+    "@nestjs/apollo": "^10.0.8",
     "@nestjs/common": "^8.4.4",
     "@nestjs/core": "^8.4.4",
+    "@nestjs/graphql": "^10.0.8",
     "@nestjs/platform-express": "^8.4.4",
+    "apollo-server-express": "^3.6.7",
     "core-js": "^3.21.1",
+    "graphql": "^16.3.0",
     "puppeteer": "^13.5.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -79,4 +83,3 @@
     "url-loader": "^3.0.0"
   }
 }
-
