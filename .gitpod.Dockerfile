@@ -1,10 +1,7 @@
-FROM gitpod/workspace-full-vnc
-
-# Install Electron dependencies.
-RUN sudo apt-get update && sudo apt-get install -y libasound2-dev libgtk-3-dev libnss3-dev  && sudo rm -rf /var/lib/apt/lists/*
+FROM gitpod/workspace-postgres
 
 # Install Chrome dependencies.
-RUN sudo apt update && sudo apt-get install -y \
+RUN sudo apt-get update && sudo apt install -y \
   fonts-liberation \
   gconf-service \
   libappindicator1 \
@@ -37,3 +34,5 @@ RUN sudo apt update && sudo apt-get install -y \
   libxss1 \
   libxtst6 \
   xdg-utils
+
+RUN sudo rm -rf /var/lib/apt/lists/*
