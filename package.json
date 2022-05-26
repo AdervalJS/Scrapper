@@ -6,7 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "scrapper-backend:typeorm": "ts-node ./node_modules/typeorm/cli.js --config ./apps/scrapper-backend/src/dataBase/orm.cli.config.ts"
+    "scrapper-backend:typeorm": "ts-node --project ./libs/backend/configs/tsconfig.lib.json ./node_modules/typeorm/cli.js --config ./libs/backend/configs/src/lib/database/orm.cli.config.ts"
   },
   "private": true,
   "dependencies": {

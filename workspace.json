@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "backend-configs": "libs/backend/configs",
     "backend-extract": "libs/backend/extract",
     "backend-models": "libs/backend/models",
     "scrapper-backend": "apps/scrapper-backend",
