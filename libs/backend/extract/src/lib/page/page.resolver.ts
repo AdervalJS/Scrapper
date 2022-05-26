@@ -4,7 +4,7 @@ import { FindPages } from './page.interfaces';
 import { PageService } from './page.service';
 
 @Injectable()
-export class PageExtract {
+export class PageResolver {
   constructor(
     @Inject(PuppeteerConfig) private browser: PuppeteerConfig,
     @Inject(PageService) private pageService: PageService

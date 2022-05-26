@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { PageExtract } from './page.extract';
+import { PageResolver } from './page.resolver';
 import { PuppeteerConfigModule } from '../PuppeteerConfig/puppeteerConfig.module';
 import { PageService } from './page.service';
 
 @Module({
   imports: [PuppeteerConfigModule],
-  exports: [PageExtract, PageService],
-  providers: [PageExtract, PageService],
+  exports: [PageResolver, PageService],
+  providers: [PageResolver, PageService],
 })
 export class PageModule {}
