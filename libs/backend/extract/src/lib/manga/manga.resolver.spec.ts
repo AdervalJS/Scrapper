@@ -5,10 +5,12 @@ import { PROFILE, PROFILE_URL } from '../dataFoTest';
 import { MangaService } from './manga.service';
 import { ChapterModule } from '../chapter/chapter.module';
 import { Manga } from './manga.interfaces';
+import { testChapters } from '../chapter/chapter.resolver.spec';
 
-function testManga({ updateAt, createAt, ...mangaInfo }: Manga) {
+function testManga({ updateAt, createAt, chapters, ...mangaInfo }: Manga) {
   expect(typeof updateAt === 'object').toBeTruthy();
   expect(typeof createAt === 'object').toBeTruthy();
+  testChapters(chapters);
   expect(mangaInfo).toEqual(PROFILE);
 }
 
