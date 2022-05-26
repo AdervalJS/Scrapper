@@ -1,6 +1,9 @@
 export const PROFILE_URL =
   'https://mangaschan.com/manga/of-all-things-i-became-a-crow/';
 
+export const CHAPTER_URL =
+  'https://mangaschan.com/of-all-things-i-became-a-crow-capitulo-1/';
+
 export const PROFILE = {
   name: 'Of All things, I Became a Crow',
   image:

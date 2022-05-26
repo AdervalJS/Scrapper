@@ -4,7 +4,7 @@ import { FindChapters } from './chapter.interfaces';
 import { ChapterService } from './chapter.service';
 
 @Injectable()
-export class ChapterExtract {
+export class ChapterResolver {
   constructor(
     @Inject(ChapterService) private chapterService: ChapterService,
     @Inject(PuppeteerConfig) private browser: PuppeteerConfig
