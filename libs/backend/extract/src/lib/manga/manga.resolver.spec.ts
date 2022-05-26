@@ -1,5 +1,5 @@
 import { Test } from '@nestjs/testing';
-import { MangaExtract } from './manga.resolver';
+import { MangaResolver } from './manga.resolver';
 import { PuppeteerConfigModule } from '../PuppeteerConfig/puppeteerConfig.module';
 import { PROFILE, PROFILE_URL } from '../dataFoTest';
 import { MangaService } from './manga.service';
@@ -12,26 +12,26 @@ function testManga({ updateAt, createAt, ...mangaInfo }: Manga) {
   expect(mangaInfo).toEqual(PROFILE);
 }
 
-describe('MangaExtract', () => {
-  let mangaExtract: MangaExtract;
+describe('MangaResolver', () => {
+  let mangaResolver: MangaResolver;
 
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       imports: [PuppeteerConfigModule, ChapterModule],
-      providers: [MangaExtract, MangaService],
+      providers: [MangaResolver, MangaService],
     }).compile();
 
-    mangaExtract = await moduleRef.get<MangaExtract>(MangaExtract);
+    mangaResolver = await moduleRef.get<MangaResolver>(MangaResolver);
   });
 
   it('extrai as informações do manga e adicionar a data da criação e atualização', async () => {
-    const manga = await mangaExtract.findManga(PROFILE_URL);
+    const manga = await mangaResolver.findManga(PROFILE_URL);
 
     testManga(manga);
   });
 
   it('extrai as informações e adicionar a data da criação e atualização de todos os mangas', async () => {
-    for await (const manga of await mangaExtract.findMangasGen([
+    for await (const manga of await mangaResolver.findMangasGen([
       PROFILE_URL,
       PROFILE_URL,
     ])) {
@@ -41,7 +41,7 @@ describe('MangaExtract', () => {
 
   it('extrai as urls dos mangas pagina por pagina', async () => {
     const maxPageToSearcher = 2;
-    for await (const urls of await mangaExtract.findUrlsGen(
+    for await (const urls of await mangaResolver.findUrlsGen(
       maxPageToSearcher
     )) {
       urls.forEach((url) => {

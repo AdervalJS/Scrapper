@@ -5,7 +5,7 @@ import { FindManga, FindMangasGen, FindUrlsGen } from './manga.interfaces';
 import { MangaService } from './manga.service';
 
 @Injectable()
-export class MangaExtract {
+export class MangaResolver {
   constructor(
     @Inject(MangaService) private mangaService: MangaService,
     @Inject(PuppeteerConfig) private browser: PuppeteerConfig
