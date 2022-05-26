@@ -1,2 +1,3 @@
-export * from './lib/manga/manga.base.model';
-export * from './lib/manga/manga.metadata.model';
+export * from './lib/manga.base';
+export * from './lib/manga.model';
+export * from './models.module';
