@@ -1,5 +1,5 @@
 import { Selector } from '../../interfaces/selectors';
-import { Pages } from './page.interfaces';
+import { Pages } from './pageExtract.interfaces';
 
 export const PAGES: Selector<Element[], Pages> = {
   selector: '#readerarea > img',

@@ -1,9 +1,9 @@
 import { Test } from '@nestjs/testing';
-import { PageResolver } from './page.resolver';
+import { PageResolverExtract } from './pageExtract.resolver';
 import { PuppeteerConfigModule } from '../PuppeteerConfig/puppeteerConfig.module';
-import { PageService } from './page.service';
+import { PageServiceExtract } from './pageExtract.service';
 import { CHAPTER_URL } from '../dataFoTest';
-import { Pages } from './page.interfaces';
+import { Pages } from './pageExtract.interfaces';
 
 export function pagesTest(pages: Pages) {
   pages.forEach(({ pageNumber, url }) => {
@@ -12,20 +12,22 @@ export function pagesTest(pages: Pages) {
   });
 }
 
-describe('PageResolver', () => {
-  let pageResolver: PageResolver;
+describe('PageResolverExtract', () => {
+  let pageResolverExtract: PageResolverExtract;
 
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       imports: [PuppeteerConfigModule],
-      providers: [PageResolver, PageService],
+      providers: [PageResolverExtract, PageServiceExtract],
     }).compile();
 
-    pageResolver = await moduleRef.get<PageResolver>(PageResolver);
+    pageResolverExtract = await moduleRef.get<PageResolverExtract>(
+      PageResolverExtract
+    );
   });
 
   it('extrai as paginas do capítulo', async () => {
-    const pages = await pageResolver.findPages(CHAPTER_URL);
+    const pages = await pageResolverExtract.findPages(CHAPTER_URL);
     pagesTest(pages);
   }, 4000);
 });
