@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { Page } from 'puppeteer/lib/types';
-import { FindChapters } from './chapter.interfaces';
-import { CHAPTERS } from './chapter.selector';
+import { FindChapters } from './chapterExtract.interfaces';
+import { CHAPTERS } from './chapterExtract.selector';
 
 @Injectable()
-export class ChapterService {
+export class ChapterServiceExtract {
   async findChapters(url: string, page: Page): FindChapters {
     if (page.url() !== url) await page.goto(url);
 

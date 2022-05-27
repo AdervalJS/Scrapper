@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Page } from 'puppeteer';
 import { BR_MANGA_ALL } from '../../urls';
-import { ChapterService } from '../chapter/chapter.service';
+import { ChapterServiceExtract } from '../chapterExtract/chapterExtract.service';
 import {
   FindManga,
   FindUrlsByPage,
@@ -20,7 +20,10 @@ import {
 
 @Injectable()
 export class MangaExtractService {
-  constructor(@Inject(ChapterService) private chapterService: ChapterService) {}
+  constructor(
+    @Inject(ChapterServiceExtract)
+    private ChapterServiceExtract: ChapterServiceExtract
+  ) {}
 
   private shouldIgnoreThisManga(genres: string[]): ShouldIgnoreThisManga {
     const genreToIgnore = 'Hentai';
@@ -50,7 +53,7 @@ export class MangaExtractService {
       SYNOPSIS.selector,
       SYNOPSIS.extractFunction
     );
-    const chapters = await this.chapterService.findChapters(url, page);
+    const chapters = await this.ChapterServiceExtract.findChapters(url, page);
     const date = new Date();
 
     return {

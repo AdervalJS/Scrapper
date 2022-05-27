@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { MangaExtractModule } from './mangaExtract/mangaExtract.module';
-import { ChapterModule } from './chapter/chapter.module';
+import { ChapterExtractModule } from './chapterExtract/chapterExtract.module';
 import { PageModule } from './page/page.module';
 
 @Module({
-  exports: [MangaExtractModule, ChapterModule, PageModule],
+  exports: [MangaExtractModule, ChapterExtractModule, PageModule],
 })
 export class BackendExtractModule {}

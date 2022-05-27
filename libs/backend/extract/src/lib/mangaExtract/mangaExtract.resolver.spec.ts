@@ -3,9 +3,9 @@ import { MangaExtractResolver } from './mangaExtract.resolver';
 import { PuppeteerConfigModule } from '../PuppeteerConfig/puppeteerConfig.module';
 import { PROFILE, PROFILE_URL } from '../dataFoTest';
 import { MangaExtractService } from './mangaExtract.service';
-import { ChapterModule } from '../chapter/chapter.module';
+import { ChapterExtractModule } from '../chapterExtract/chapterExtract.module';
 import { Manga } from './mangaExtract.interfaces';
-import { testChapters } from '../chapter/chapter.resolver.spec';
+import { testChapters } from '../chapterExtract/chapterExtract.resolver.spec';
 
 function testManga({ updateAt, createAt, chapters, ...mangaInfo }: Manga) {
   expect(typeof updateAt === 'object').toBeTruthy();
@@ -19,7 +19,7 @@ describe('MangaExtractResolver', () => {
 
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
-      imports: [PuppeteerConfigModule, ChapterModule],
+      imports: [PuppeteerConfigModule, ChapterExtractModule],
       providers: [MangaExtractResolver, MangaExtractService],
     }).compile();
 

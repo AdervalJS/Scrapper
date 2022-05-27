@@ -1,5 +1,5 @@
 import { Manga as MangaType } from '@scrapper/shared/util-interfaces';
-import { Chapters } from '../chapter/chapter.interfaces';
+import { Chapters } from '../chapterExtract/chapterExtract.interfaces';
 
 export interface Manga extends Omit<MangaType, 'id' | 'view'> {
   chapters: Chapters;

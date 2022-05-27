@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { PuppeteerConfigModule } from '../PuppeteerConfig/puppeteerConfig.module';
 import { MangaExtractResolver } from './mangaExtract.resolver';
 import { MangaExtractService } from './mangaExtract.service';
-import { ChapterModule } from '../chapter/chapter.module';
+import { ChapterExtractModule } from '../chapterExtract/chapterExtract.module';
 
 @Module({
-  imports: [PuppeteerConfigModule, ChapterModule],
+  imports: [PuppeteerConfigModule, ChapterExtractModule],
   providers: [MangaExtractResolver, MangaExtractService],
 })
 export class MangaExtractModule {}

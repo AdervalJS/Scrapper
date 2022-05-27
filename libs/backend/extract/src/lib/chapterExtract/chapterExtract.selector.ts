@@ -1,5 +1,5 @@
 import { Selector } from '../../interfaces/selectors';
-import { Chapters } from './chapter.interfaces';
+import { Chapters } from './chapterExtract.interfaces';
 
 export const CHAPTERS: Selector<Element[], Chapters> = {
   selector: '#chapterlist > ul > li > div > div > a',

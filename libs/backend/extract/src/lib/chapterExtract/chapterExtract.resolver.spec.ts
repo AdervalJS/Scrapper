@@ -1,9 +1,9 @@
 import { Test } from '@nestjs/testing';
-import { ChapterResolver } from './chapter.resolver';
+import { ChapterResolverExtract } from './chapterExtract.resolver';
 import { PuppeteerConfigModule } from '../PuppeteerConfig/puppeteerConfig.module';
-import { ChapterService } from './chapter.service';
+import { ChapterServiceExtract } from './chapterExtract.service';
 import { PROFILE_URL } from '../dataFoTest';
-import { Chapters } from './chapter.interfaces';
+import { Chapters } from './chapterExtract.interfaces';
 
 export function testChapters(chapters: Chapters) {
   chapters.forEach(({ name, chapterNumber, originUrl }) => {
@@ -13,20 +13,22 @@ export function testChapters(chapters: Chapters) {
   });
 }
 
-describe('ChapterResolver', () => {
-  let chapterResolver: ChapterResolver;
+describe('ChapterResolverExtract', () => {
+  let chapterResolverExtract: ChapterResolverExtract;
 
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       imports: [PuppeteerConfigModule],
-      providers: [ChapterResolver, ChapterService],
+      providers: [ChapterResolverExtract, ChapterServiceExtract],
     }).compile();
 
-    chapterResolver = await moduleRef.get<ChapterResolver>(ChapterResolver);
+    chapterResolverExtract = await moduleRef.get<ChapterResolverExtract>(
+      ChapterResolverExtract
+    );
   });
 
   it('deveria extrair as informações dos capítulos', async () => {
-    const chapters = await chapterResolver.findChapters(PROFILE_URL);
+    const chapters = await chapterResolverExtract.findChapters(PROFILE_URL);
     testChapters(chapters);
   });
 });
