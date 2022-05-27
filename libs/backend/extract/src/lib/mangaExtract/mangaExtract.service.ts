@@ -7,7 +7,7 @@ import {
   FindUrlsByPage,
   ShouldIgnoreThisManga,
   ThereIsNextPage,
-} from './manga.interfaces';
+} from './mangaExtract.interfaces';
 import {
   AUTHOR,
   GENRES,
@@ -16,10 +16,10 @@ import {
   SYNOPSIS,
   URLS,
   NEXT_PAGE,
-} from './manga.selectors';
+} from './mangaExtract.selectors';
 
 @Injectable()
-export class MangaService {
+export class MangaExtractService {
   constructor(@Inject(ChapterService) private chapterService: ChapterService) {}
 
   private shouldIgnoreThisManga(genres: string[]): ShouldIgnoreThisManga {

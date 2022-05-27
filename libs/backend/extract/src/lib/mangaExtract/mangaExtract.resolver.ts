@@ -1,19 +1,20 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Page } from 'puppeteer';
 import { PuppeteerConfig } from '../PuppeteerConfig/puppeteerConfig.conf';
-import { FindManga, FindMangasGen, FindUrlsGen } from './manga.interfaces';
-import { MangaService } from './manga.service';
+import { FindManga, FindMangasGen, FindUrlsGen } from './mangaExtract.interfaces';
+import { MangaExtractService } from './mangaExtract.service';
 
 @Injectable()
-export class MangaResolver {
+export class MangaExtractResolver {
   constructor(
-    @Inject(MangaService) private mangaService: MangaService,
+    @Inject(MangaExtractService)
+    private MangaExtractService: MangaExtractService,
     @Inject(PuppeteerConfig) private browser: PuppeteerConfig
   ) {}
 
   async findManga(url: string): FindManga {
     const { browser, page } = await this.browser.get();
-    const profile = await this.mangaService.findManga(url, page);
+    const profile = await this.MangaExtractService.findManga(url, page);
     await browser.close();
 
     return profile;
@@ -23,7 +24,7 @@ export class MangaResolver {
     const { browser, page } = await this.browser.get();
 
     const findManga = async (url: string) =>
-      this.mangaService.findManga(url, page);
+      this.MangaExtractService.findManga(url, page);
 
     async function* findMangasGen() {
       for (const url of urls) {
@@ -40,7 +41,7 @@ export class MangaResolver {
     const { browser, page: brwPage } = await this.browser.get();
 
     const findUrlsByPage = async (pageToFindUrl: number, page: Page) =>
-      await this.mangaService.findUrlsByPage(page, pageToFindUrl);
+      await this.MangaExtractService.findUrlsByPage(page, pageToFindUrl);
 
     async function* findUrlsGen() {
       let currentPage = 1;

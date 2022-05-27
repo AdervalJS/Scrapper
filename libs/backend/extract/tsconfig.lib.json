@@ -8,5 +8,5 @@
     "target": "es6"
   },
   "exclude": ["**/*.spec.ts", "**/*.test.ts"],
-  "include": ["**/*.ts", "src/lib/manga/manga.selectorsts"]
+  "include": ["**/*.ts", "src/lib/mangaExtract/manga.selectors.ts"]
 }

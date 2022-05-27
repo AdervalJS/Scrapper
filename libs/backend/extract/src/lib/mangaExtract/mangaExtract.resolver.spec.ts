@@ -1,10 +1,10 @@
 import { Test } from '@nestjs/testing';
-import { MangaResolver } from './manga.resolver';
+import { MangaExtractResolver } from './mangaExtract.resolver';
 import { PuppeteerConfigModule } from '../PuppeteerConfig/puppeteerConfig.module';
 import { PROFILE, PROFILE_URL } from '../dataFoTest';
-import { MangaService } from './manga.service';
+import { MangaExtractService } from './mangaExtract.service';
 import { ChapterModule } from '../chapter/chapter.module';
-import { Manga } from './manga.interfaces';
+import { Manga } from './mangaExtract.interfaces';
 import { testChapters } from '../chapter/chapter.resolver.spec';
 
 function testManga({ updateAt, createAt, chapters, ...mangaInfo }: Manga) {
@@ -14,26 +14,28 @@ function testManga({ updateAt, createAt, chapters, ...mangaInfo }: Manga) {
   expect(mangaInfo).toEqual(PROFILE);
 }
 
-describe('MangaResolver', () => {
-  let mangaResolver: MangaResolver;
+describe('MangaExtractResolver', () => {
+  let mangaExtractResolver: MangaExtractResolver;
 
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       imports: [PuppeteerConfigModule, ChapterModule],
-      providers: [MangaResolver, MangaService],
+      providers: [MangaExtractResolver, MangaExtractService],
     }).compile();
 
-    mangaResolver = await moduleRef.get<MangaResolver>(MangaResolver);
+    mangaExtractResolver = await moduleRef.get<MangaExtractResolver>(
+      MangaExtractResolver
+    );
   });
 
   it('extrai as informações do manga e adicionar a data da criação e atualização', async () => {
-    const manga = await mangaResolver.findManga(PROFILE_URL);
+    const manga = await mangaExtractResolver.findManga(PROFILE_URL);
 
     testManga(manga);
   });
 
   it('extrai as informações e adicionar a data da criação e atualização de todos os mangas', async () => {
-    for await (const manga of await mangaResolver.findMangasGen([
+    for await (const manga of await mangaExtractResolver.findMangasGen([
       PROFILE_URL,
       PROFILE_URL,
     ])) {
@@ -43,7 +45,7 @@ describe('MangaResolver', () => {
 
   it('extrai as urls dos mangas pagina por pagina', async () => {
     const maxPageToSearcher = 2;
-    for await (const urls of await mangaResolver.findUrlsGen(
+    for await (const urls of await mangaExtractResolver.findUrlsGen(
       maxPageToSearcher
     )) {
       urls.forEach((url) => {
