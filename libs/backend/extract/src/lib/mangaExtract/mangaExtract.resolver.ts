@@ -1,7 +1,11 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Page } from 'puppeteer';
 import { PuppeteerConfig } from '../PuppeteerConfig/puppeteerConfig.conf';
-import { FindManga, FindMangasGen, FindUrlsGen } from './mangaExtract.interfaces';
+import {
+  FindManga,
+  FindMangasGen,
+  FindUrlsGen,
+} from './mangaExtract.interfaces';
 import { MangaExtractService } from './mangaExtract.service';
 
 @Injectable()
@@ -47,7 +51,11 @@ export class MangaExtractResolver {
       let currentPage = 1;
       let isFindUrls = true;
 
-      while (isFindUrls && currentPage !== maxPageToSearcher) {
+      while (
+        (isFindUrls && currentPage <= maxPageToSearcher) ||
+        maxPageToSearcher === undefined
+      ) {
+        isFindUrls = false;
         const { urls, nextPage } = await findUrlsByPage(currentPage, brwPage);
 
         currentPage++;

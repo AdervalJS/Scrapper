@@ -7,5 +7,6 @@ import { ChapterExtractModule } from '../chapterExtract/chapterExtract.module';
 @Module({
   imports: [PuppeteerConfigModule, ChapterExtractModule],
   providers: [MangaExtractResolver, MangaExtractService],
+  exports: [MangaExtractResolver, MangaExtractService],
 })
 export class MangaExtractModule {}
