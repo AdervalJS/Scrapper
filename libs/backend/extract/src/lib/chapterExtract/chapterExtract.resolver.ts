@@ -4,7 +4,7 @@ import { FindChapters } from './chapterExtract.interfaces';
 import { ChapterServiceExtract } from './chapterExtract.service';
 
 @Injectable()
-export class ChapterResolverExtract {
+export class ChapterExtractResolver {
   constructor(
     @Inject(ChapterServiceExtract)
     private ChapterServiceExtract: ChapterServiceExtract,
