@@ -1,31 +1,15 @@
-import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
 import { Entity, Column } from 'typeorm';
-import { BaseManga } from './manga.base';
+import { MangaBase } from './manga.base';
 
 @ObjectType()
 @Entity('manga')
-export class MangaModel extends BaseManga {
-  @Field({ nullable: true })
-  @Column()
-  synopsis?: string;
+export class MangaModel extends MangaBase {
+  @Field(() => [MangaBase], { nullable: true })
+  moreAuthor: MangaBase[];
 
-  @Field({ nullable: true })
-  @Column()
-  author?: string;
-
-  @Field(() => [String], { nullable: true })
-  @Column('text', { array: true, default: {} })
-  genres: string[];
-
-  @Field(() => Int, { defaultValue: 0 })
-  @Column()
-  view: number;
-
-  @Field(() => [BaseManga], { nullable: true })
-  moreAuthor: BaseManga[];
-
-  @Field(() => [BaseManga], { nullable: true })
-  relation: BaseManga[];
+  @Field(() => [MangaBase], { nullable: true })
+  relation: MangaBase[];
 
   @Column({ type: 'timestamp', nullable: true, default: 'now()' })
   createAt: Date;
@@ -42,3 +26,5 @@ export class MangaModel extends BaseManga {
   // @JoinColumn({ name: 'mangaId' })
   // chapters: Chapter[];
 }
+
+export type MangaEntity = Omit<MangaModel, 'relation' | 'moreAuthor'>;
