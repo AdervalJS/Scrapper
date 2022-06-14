@@ -1,5 +1,6 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { Entity, Column } from 'typeorm';
+import { Entity, Column, OneToMany, JoinColumn } from 'typeorm';
+import { ChapterModel } from './chapter.model';
 import { MangaBase } from './manga.base';
 
 @ObjectType()
@@ -20,11 +21,12 @@ export class MangaModel extends MangaBase {
   @Column()
   originUrl: string;
 
-  // @OneToMany(() => Chapter, (chapters) => chapters.manga, {
-  //   cascade: ['insert', 'update'],
-  // })
-  // @JoinColumn({ name: 'mangaId' })
-  // chapters: Chapter[];
+  @OneToMany(() => ChapterModel, (ChapterModels) => ChapterModels.manga, {
+    cascade: ['insert', 'update', 'remove'],
+  })
+  @JoinColumn({ name: 'mangaId' })
+  @Field(() => [ChapterModel], { nullable: true })
+  chapters: ChapterModel[];
 }
 
 export type MangaEntity = Omit<MangaModel, 'relation' | 'moreAuthor'>;
