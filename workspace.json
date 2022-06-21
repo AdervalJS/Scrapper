@@ -9,6 +9,7 @@
     "scrapper-web-e2e": "apps/scrapper-web-e2e",
     "shared-assets": "libs/shared/assets",
     "shared-util-interfaces": "libs/shared/util-interfaces",
+    "shared-util-test": "libs/shared/util-test",
     "web-ui-components": "libs/web/ui-components",
     "web-ui-components-e2e": "apps/web-ui-components-e2e",
     "web-util-storage": "libs/web/util-storage",

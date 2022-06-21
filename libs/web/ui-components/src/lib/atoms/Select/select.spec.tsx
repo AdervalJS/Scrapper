@@ -7,7 +7,7 @@ import { OptionsForTest } from './select.data';
 import { Select } from '.';
 
 describe('select', () => {
-  it('deveria ser possivel mudar de opção', async () => {
+  it('deveria ser possível mudar de opção', async () => {
     const nextValue = viewOrderSelect[1];
 
     customRender(

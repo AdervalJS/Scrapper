@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { light, viewOrderSelect } from '@scrapper/shared/assets';
-import { mangas, ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { mangas } from '@scrapper/shared/util-test';
 
 import { TitleAndSelect } from '../../molecules/TitleAndSelect';
 import { titleAndSelectState } from '../../molecules/TitleAndSelect/titleAndSelect.test.state';

@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/react';
-import { mangas, ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { mangas } from '@scrapper/shared/util-test';
 
 import { Actions as itemActions } from '../../molecules/ItemCompacted/itemCompacted.stories';
 import { CompactItemList, CompactItemListProps } from '.';

@@ -1,4 +1,5 @@
-import { customRender, mangaProfile } from '@scrapper/web/util-test';
+import { mangaProfile } from '@scrapper/shared/util-test';
+import { customRender } from '@scrapper/web/util-test';
 import { fireEvent } from '@testing-library/react';
 import { Profile, ProfileProps } from '.';
 

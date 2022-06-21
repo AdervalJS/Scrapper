@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { manga } from '@scrapper/web/util-test';
+import { manga } from '@scrapper/shared/util-test';
 import { BlurryImage, BlurryImageProps } from '.';
 
 export default {
@@ -15,7 +15,7 @@ Primary.args = {
     imageUrl: manga.image,
     alt: manga.name,
   },
-  style:{
-    height: '360px'
-  }
+  style: {
+    height: '360px',
+  },
 };

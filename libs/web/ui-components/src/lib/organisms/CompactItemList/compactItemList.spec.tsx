@@ -1,5 +1,6 @@
 import { fireEvent } from '@testing-library/dom';
-import { customRender, mangas, manga } from '@scrapper/web/util-test';
+import { customRender } from '@scrapper/web/util-test';
+import { manga, mangas } from '@scrapper/shared/util-test';
 
 import { CompactItemList } from '.';
 

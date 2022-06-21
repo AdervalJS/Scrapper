@@ -1,6 +1,7 @@
 import { fireEvent } from '@testing-library/react';
 import { ItemCompacted } from '.';
-import { customRender, manga } from '@scrapper/web/util-test';
+import { customRender } from '@scrapper/web/util-test';
+import { manga } from '@scrapper/shared/util-test';
 
 function setup() {
   return customRender(

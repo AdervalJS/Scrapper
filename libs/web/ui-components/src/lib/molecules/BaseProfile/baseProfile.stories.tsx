@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { BaseProfile, BaseProfileProps } from '.';
-import { manga, ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { manga } from '@scrapper/shared/util-test';
 
 export default {
   title: 'molecules/BaseProfile',
@@ -16,5 +17,5 @@ const Template: Story<BaseProfileProps> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   data: manga,
-  viewType:'banner'
+  viewType: 'banner',
 };

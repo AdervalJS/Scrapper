@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { Profile as CProfile } from '@scrapper/web/ui-components';
-import { mangaProfile } from '@scrapper/web/util-test';
+import { mangaProfile } from '@scrapper/shared/util-test';
 
 import { Container } from './profile.styles';
 

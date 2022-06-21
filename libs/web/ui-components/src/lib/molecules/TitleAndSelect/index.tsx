@@ -27,7 +27,7 @@ export const TitleAndSelect: React.FC<TitleAndSelectProps> = ({
 
   useEffect(() => {
     if (defaultSelected) setSelected(defaultSelected);
-  }, []);
+  }, []); //eslint-disable-line
 
   function handleSelect(selected: string) {
     if (onOptionSelect) onOptionSelect(selected);

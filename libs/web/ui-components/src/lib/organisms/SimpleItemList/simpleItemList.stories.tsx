@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { light } from '@scrapper/shared/assets';
-import { mangasBase, ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { mangasBase } from '@scrapper/shared/util-test';
 
 import { SimpleItemList, SimpleItemListProps } from '.';
 

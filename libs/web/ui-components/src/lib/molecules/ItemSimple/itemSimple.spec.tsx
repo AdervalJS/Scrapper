@@ -1,6 +1,7 @@
 import { fireEvent } from '@testing-library/react';
 import { ItemSimple } from '.';
-import { baseManga, customRender } from '@scrapper/web/util-test';
+import { customRender } from '@scrapper/web/util-test';
+import { baseManga } from '@scrapper/shared/util-test';
 
 function setup() {
   return customRender(

@@ -1,4 +1,5 @@
-import { customRender, mangas, manga } from '@scrapper/web/util-test';
+import { mangas } from '@scrapper/shared/util-test';
+import { customRender } from '@scrapper/web/util-test';
 
 import { BannerList } from '.';
 

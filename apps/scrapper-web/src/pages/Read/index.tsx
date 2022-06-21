@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import { useNavigate, useParams } from 'react-router-dom';
-import { chapters } from '@scrapper/web/util-test';
+import { chapters } from '@scrapper/shared/util-test';
 import { useChapterSelected } from '../../hooks';
 
 import {

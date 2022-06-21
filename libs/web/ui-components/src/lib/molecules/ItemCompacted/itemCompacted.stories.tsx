@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react';
-import { manga, ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { manga } from '@scrapper/shared/util-test';
 import { ItemCompacted, ItemCompactedProps } from '.';
 
 export default {

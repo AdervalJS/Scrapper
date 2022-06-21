@@ -1,4 +1,5 @@
-import { customRender, chapters } from '@scrapper/web/util-test';
+import { chapters } from '@scrapper/shared/util-test';
+import { customRender } from '@scrapper/web/util-test';
 import { Chapters } from '.';
 import { SelectedIdState } from './chapters.test.state';
 

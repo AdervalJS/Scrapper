@@ -1,5 +1,5 @@
 import { customRender } from '@scrapper/web/util-test';
-import { manga } from '@scrapper/web/util-test';
+import { manga } from '@scrapper/shared/util-test';
 import { Banner } from '.';
 
 function setup() {

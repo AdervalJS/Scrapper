@@ -1,9 +1,6 @@
 import { Meta, Story } from '@storybook/react';
-import {
-  RecoilWrapper,
-  ThemeProviderWrapper,
-  chapters,
-} from '@scrapper/web/util-test';
+import { RecoilWrapper, ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { chapters } from '@scrapper/shared/util-test';
 import { Chapters, ChaptersProps } from '.';
 import { SelectedIdState } from './chapters.test.state';
 

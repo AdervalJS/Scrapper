@@ -1,5 +1,6 @@
 import { fireEvent } from '@testing-library/dom';
-import { customRender, mangas } from '@scrapper/web/util-test';
+import { customRender } from '@scrapper/web/util-test';
+import { mangas } from '@scrapper/shared/util-test';
 import { light, viewOrderSelect } from '@scrapper/shared/assets';
 
 import { ToggleList } from '.';

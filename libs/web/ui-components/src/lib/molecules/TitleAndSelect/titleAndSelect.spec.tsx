@@ -28,7 +28,7 @@ describe('TitleAndSelect', () => {
 
     expect(getById('titleAndSelect').textContent).toEqual(titleToCompare);
   });
-  it('deveria ser possivel mudar de opção', () => {
+  it('deveria ser possível mudar de opção', () => {
     setup();
 
     const nextValue = viewOrderSelect[1];

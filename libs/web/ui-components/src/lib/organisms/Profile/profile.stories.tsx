@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react';
-import { mangaProfile, ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { mangaProfile } from '@scrapper/shared/util-test';
 import { Profile, ProfileProps } from '.';
 
 export default {
@@ -7,11 +8,11 @@ export default {
   component: Profile,
 } as Meta;
 
-const Actions:Partial<ProfileProps> = {
-  onClose:() => alert('Close'),
-  authorItemClick:() => alert('item clicked'),
-  relationItemClick:() => alert('item clicked')
-}
+const Actions: Partial<ProfileProps> = {
+  onClose: () => alert('Close'),
+  authorItemClick: () => alert('item clicked'),
+  relationItemClick: () => alert('item clicked'),
+};
 
 const Template: Story<ProfileProps> = (args) => (
   <ThemeProviderWrapper>

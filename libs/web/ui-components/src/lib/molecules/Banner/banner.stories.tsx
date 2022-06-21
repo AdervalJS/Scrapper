@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { Banner, BannerProps } from '.';
-import { manga, ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { manga } from '@scrapper/shared/util-test';
 
 export default {
   title: 'molecules/Banner',

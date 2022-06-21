@@ -1,4 +1,5 @@
-import { customRender, manga } from '@scrapper/web/util-test';
+import { manga } from '@scrapper/shared/util-test';
+import { customRender } from '@scrapper/web/util-test';
 import { BaseProfile, BaseProfileProps } from '.';
 
 function setup(props: Omit<BaseProfileProps, 'data'>) {

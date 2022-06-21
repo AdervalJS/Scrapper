@@ -1,5 +1,6 @@
 import { fireEvent } from '@testing-library/react';
-import { customRender, manga } from '@scrapper/web/util-test';
+import { customRender } from '@scrapper/web/util-test';
+import { manga } from '@scrapper/shared/util-test';
 import { Read } from '.';
 
 describe('Read', () => {

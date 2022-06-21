@@ -34,7 +34,7 @@ export const DropSelect: React.FC<DropSelectProps> = ({
 
   useEffect(() => {
     if (defaultSelecteds) setSelecteds(defaultSelecteds);
-  }, []);
+  }, []); //eslint-disable-line
 
   function toggleCompacted() {
     setCompacted(!compacted);

@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/dom';
-import { customRender, mangas, mangasBase } from '@scrapper/web/util-test';
-
+import { customRender } from '@scrapper/web/util-test';
+import { mangas, mangasBase } from '@scrapper/shared/util-test';
 import { SimpleItemList } from '.';
 
 const TITLE = 'SimpleItemList';

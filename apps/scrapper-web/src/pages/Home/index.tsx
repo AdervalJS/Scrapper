@@ -1,6 +1,6 @@
 import { useNavigate, Outlet } from 'react-router-dom';
 import { useTheme } from 'styled-components';
-import { mangas } from '@scrapper/web/util-test';
+import { mangas } from '@scrapper/shared/util-test';
 import { Theme, MangaBaseProps } from '@scrapper/shared/util-interfaces';
 import { MangaReadProp } from '@scrapper/web/util-storage';
 
@@ -30,13 +30,13 @@ const Home: React.FC = () => {
   function handleClick(props: MangaBaseProps) {
     const { chapterId, id } = props as MangaReadProp;
 
-    const chapter = chapterId ? `?chapter=${chapterId}`:''
+    const chapter = chapterId ? `?chapter=${chapterId}` : '';
 
-    navigate(`/read/${ id }${chapter}`);
+    navigate(`/read/${id}${chapter}`);
   }
 
   function goToProfile({ id }: ItemCompactedData) {
-    navigate(`/profile/${ id }`);
+    navigate(`/profile/${id}`);
   }
 
   return (

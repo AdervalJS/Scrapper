@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
-import { manga, ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { ThemeProviderWrapper } from '@scrapper/web/util-test';
 import { Page, PageProps } from '.';
+import { manga } from '@scrapper/shared/util-test';
 
 export default {
   title: 'atoms/Page',

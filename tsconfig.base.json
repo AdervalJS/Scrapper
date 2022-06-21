@@ -22,6 +22,7 @@
       "@scrapper/shared/util-interfaces": [
         "libs/shared/util-interfaces/src/index.ts"
       ],
+      "@scrapper/shared/util-test": ["libs/shared/util-test/src/index.ts"],
       "@scrapper/web/ui-components": ["libs/web/ui-components/src/index.ts"],
       "@scrapper/web/util-storage": ["libs/web/util-storage/src/index.ts"],
       "@scrapper/web/util-test": ["libs/web/util-test/src/index.ts"]

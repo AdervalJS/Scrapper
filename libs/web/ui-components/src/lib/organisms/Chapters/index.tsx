@@ -23,7 +23,7 @@ export const Chapters: React.FC<ChaptersProps> = ({
 
   useEffect(() => {
     if (!selectedId) setSelectedId(defaultSelectedId);
-  }, [defaultSelectedId]);
+  }, [defaultSelectedId]); //eslint-disable-line
 
   function handleClick({ value: id }: Option) {
     setSelectedId(Number(id));
@@ -34,6 +34,7 @@ export const Chapters: React.FC<ChaptersProps> = ({
       <Title>Capítulos</Title>
       {data.map((chapter) => (
         <DropSelectOption
+          key={chapter.id}
           onPick={handleClick}
           selected={chapter.id === selectedId}
           option={{ label: chapter.name, value: chapter.id }}

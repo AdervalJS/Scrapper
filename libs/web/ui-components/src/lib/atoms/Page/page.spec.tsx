@@ -1,5 +1,5 @@
 import { Page, PageProps } from '.';
-import { pages } from '@scrapper/web/util-test';
+import { pages } from '@scrapper/shared/util-test';
 import { render } from '@testing-library/react';
 
 const PAGE = pages[0];

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { useNavigate } from 'react-router-dom';
-import { mangas } from '@scrapper/web/util-test';
+import { mangas } from '@scrapper/shared/util-test';
 import { viewOrderSelect } from '@scrapper/shared/assets';
 import { useMobile, useFilters } from '../../hooks';
 

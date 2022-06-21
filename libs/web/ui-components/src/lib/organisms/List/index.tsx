@@ -33,8 +33,9 @@ export const List: React.FC<ListProps> = ({
   const listRef = useRef<HTMLElement | null>(null);
   const [initialPositionTime, setInitialPositionTime] =
     useState<NodeJS.Timeout | null>(null);
-  const [scrollRightTime, setScrollRightTime] =
-    useState<NodeJS.Timeout | null>(null);
+  const [scrollRightTime, setScrollRightTime] = useState<NodeJS.Timeout | null>(
+    null
+  );
   const [enableLeftButton, setEnableLeftButton] = useState(false);
   const [enableRightButton, setEnableRightButton] = useState(false);
   const [itemInfo, setItemInfo] = useState<Item>({ id: '', def: 0 });
@@ -44,12 +45,12 @@ export const List: React.FC<ListProps> = ({
   useEffect(() => handleButton(0), []); // eslint-disable-line
 
   useEffect(() => {
-    if(scrolling) {
-      timeToEnableScroll()
+    if (scrolling) {
+      timeToEnableScroll();
     } else {
-      startAutoScroll()
+      startAutoScroll();
     }
-  }, [scrolling]);
+  }, [scrolling]); //eslint-disable-line
 
   function onScroll(e: React.UIEvent<HTMLElement, globalThis.UIEvent>) {
     const { scrollLeft } = e.currentTarget;

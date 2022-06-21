@@ -28,7 +28,7 @@ export const Profile: React.FC<ProfileProps> = ({
   const { image, name, moreAuthor, relation } = data;
 
   useEffect(() => {
-    if (containerRef.current) {
+    if (containerRef.current?.scrollTo) {
       containerRef.current.scrollTo({
         top: 0,
         behavior: 'smooth',

@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react';
-import { manga, ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { ThemeProviderWrapper } from '@scrapper/web/util-test';
 import { CloseButton, CloseButtonProps } from '.';
 
 export default {

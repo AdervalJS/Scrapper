@@ -5,7 +5,7 @@ import './dropSelectOption.fontConfig.css';
 
 export type ContainerProps = ElementBaseProps<
   'div',
-  { selected: boolean; width?: string; height?: string }
+  { selected?: boolean; width?: string; height?: string }
 >;
 
 export const Container = styled.div<ContainerProps>`

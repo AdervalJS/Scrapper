@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { ItemImage, ItemImageProps } from '.';
-import { manga } from '@scrapper/web/util-test';
+import { manga } from '@scrapper/shared/util-test';
 
 export default {
   title: 'atoms/ItemImage',

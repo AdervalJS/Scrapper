@@ -1,5 +1,5 @@
 import { customRender } from '@scrapper/web/util-test';
-import { mangas } from '@scrapper/web/util-test';
+import { mangas } from '@scrapper/shared/util-test';
 import { ItemCompacted } from '../../molecules/ItemCompacted';
 
 import { List } from '.';

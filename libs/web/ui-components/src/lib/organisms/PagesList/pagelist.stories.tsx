@@ -1,9 +1,6 @@
 import { Meta, Story } from '@storybook/react';
-import {
-  ThemeProviderWrapper,
-  RecoilWrapper,
-  pages,
-} from '@scrapper/web/util-test';
+import { ThemeProviderWrapper, RecoilWrapper } from '@scrapper/web/util-test';
+import { pages } from '@scrapper/shared/util-test';
 import { PagesListFocus } from './pagesList.test.state';
 
 import { PagesList, PagesListProps } from '.';

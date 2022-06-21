@@ -1,5 +1,5 @@
 import { customRender } from '@scrapper/web/util-test';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import { GradientButtonArrowUp } from '.';
 
 describe('GradientButtonArrowUp', () => {

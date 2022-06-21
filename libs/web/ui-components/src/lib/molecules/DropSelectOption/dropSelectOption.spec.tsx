@@ -7,12 +7,12 @@ const option = {
   label: 'test',
 };
 
-function setup(props?: Omit<DropSelectOptionProps, 'option' | 'theme'>) {
-  return customRender(<DropSelectOption option={option} {...props} />);
+function setup(props?: DropSelectOptionProps) {
+  return customRender(<DropSelectOption {...props} option={option} />);
 }
 
 describe('dropSelectOption', () => {
-  it('devira ter a label da opção fornecida', () => {
+  it('deviria ter a label da opção fornecida', () => {
     const { getByText } = setup();
 
     const element = getByText(option.label);

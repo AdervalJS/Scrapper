@@ -1,7 +1,8 @@
 import { light } from '@scrapper/shared/assets';
 import { Meta, Story } from '@storybook/react';
 import { ItemSimple, ItemSimpleProps } from '.';
-import { baseManga, ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { ThemeProviderWrapper } from '@scrapper/web/util-test';
+import { baseManga } from '@scrapper/shared/util-test';
 
 export default {
   title: 'molecules/itemSimple',

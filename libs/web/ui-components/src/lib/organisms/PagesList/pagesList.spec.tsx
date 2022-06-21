@@ -1,5 +1,5 @@
-import { customRender, pages } from '@scrapper/web/util-test';
-import { mangas } from '@scrapper/web/util-test';
+import { customRender } from '@scrapper/web/util-test';
+import { pages } from '@scrapper/shared/util-test';
 import { PagesList } from '.';
 import { PagesListFocus } from './pagesList.test.state';
 
