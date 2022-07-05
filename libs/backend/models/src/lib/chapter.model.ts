@@ -30,13 +30,15 @@ export class ChapterModel {
   chapterNumber: number;
 
   @Field(() => MangaModel)
-  @ManyToOne(() => MangaModel, (MangaModel) => MangaModel.chapters)
+  @ManyToOne(() => MangaModel, (MangaModel) => MangaModel.chapters, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'mangaId' })
   manga: MangaModel;
 
   @Field(() => [PageModel], { nullable: true })
   @OneToMany(() => PageModel, (PageModel) => PageModel.chapter, {
-    cascade: ['insert', 'update', 'remove'],
+    cascade: ['insert', 'update'],
   })
   @JoinColumn({ name: 'chapterId' })
   pages: PageModel[];

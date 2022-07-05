@@ -1,5 +1,12 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { Entity, Column, OneToMany, JoinColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  OneToMany,
+  JoinColumn,
+  UpdateDateColumn,
+  CreateDateColumn,
+} from 'typeorm';
 import { ChapterModel } from './chapter.model';
 import { MangaBase } from './manga.base';
 
@@ -12,20 +19,20 @@ export class MangaModel extends MangaBase {
   @Field(() => [MangaBase], { nullable: true })
   relation: MangaBase[];
 
-  @Column({ type: 'timestamp', nullable: true, default: 'now()' })
+  @CreateDateColumn()
   createAt: Date;
 
-  @Column({ type: 'timestamp', nullable: true, default: 'now()' })
+  @UpdateDateColumn()
   updateAt: Date;
 
   @Column()
   originUrl: string;
 
+  @Field(() => [ChapterModel], { nullable: true })
   @OneToMany(() => ChapterModel, (ChapterModels) => ChapterModels.manga, {
-    cascade: ['insert', 'update', 'remove'],
+    cascade: ['insert', 'update'],
   })
   @JoinColumn({ name: 'mangaId' })
-  @Field(() => [ChapterModel], { nullable: true })
   chapters: ChapterModel[];
 }
 

@@ -25,7 +25,9 @@ export class PageModel {
   pageNumber: number;
 
   @Field(() => ChapterModel)
-  @ManyToOne(() => ChapterModel, (ChapterModel) => ChapterModel.pages)
+  @ManyToOne(() => ChapterModel, (ChapterModel) => ChapterModel.pages, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'chapterId' })
   chapter: ChapterModel;
 }
