@@ -35,7 +35,7 @@ export class MangaExtractResolver {
         const manga = await findManga(url);
         yield manga;
       }
-      browser.close();
+      await browser.close();
     }
 
     return findMangasGen();
@@ -64,7 +64,7 @@ export class MangaExtractResolver {
         yield urls;
       }
 
-      browser.close();
+      await browser.close();
     }
 
     return findUrlsGen();
