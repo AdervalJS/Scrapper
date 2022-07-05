@@ -1,7 +1,7 @@
 import { Selector } from '../../interfaces/selectors';
-import { Pages } from './pageExtract.interfaces';
+import { PageExtracted } from './pageExtract.interfaces';
 
-export const PAGES: Selector<Element[], Pages> = {
+export const PAGES: Selector<Element[], PageExtracted[]> = {
   selector: '#readerarea > img',
   extractFunction: (e) =>
     Array.from(e).map((page, index) => ({

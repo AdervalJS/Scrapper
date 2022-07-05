@@ -3,9 +3,9 @@ import { PageResolverExtract } from './pageExtract.resolver';
 import { PuppeteerConfigModule } from '../PuppeteerConfig/puppeteerConfig.module';
 import { PageServiceExtract } from './pageExtract.service';
 import { CHAPTER_URL } from '../dataFoTest';
-import { Pages } from './pageExtract.interfaces';
+import { PageExtracted } from './pageExtract.interfaces';
 
-export function pagesTest(pages: Pages) {
+export function pagesTest(pages: PageExtracted[]) {
   pages.forEach(({ pageNumber, url }) => {
     expect(typeof pageNumber === 'number').toBeTruthy();
     expect(typeof url === 'string').toBeTruthy();

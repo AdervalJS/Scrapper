@@ -1,4 +1,4 @@
-import { Page } from '@scrapper/shared/util-interfaces';
+import { PageModel } from '@scrapper/backend/models';
 
-export type Pages = Omit<Page, 'id'>[];
-export type FindPages = Promise<Pages>;
+export type PageExtracted = Omit<PageModel, 'id' | 'chapter'>;
+export type FindPages = Promise<PageExtracted[]>;
