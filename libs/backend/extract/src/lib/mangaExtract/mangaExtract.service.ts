@@ -54,7 +54,6 @@ export class MangaExtractService {
       SYNOPSIS.extractFunction
     );
     const chapters = await this.ChapterServiceExtract.findChapters(url, page);
-    const date = new Date();
 
     return {
       name,
@@ -62,8 +61,6 @@ export class MangaExtractService {
       author,
       genres,
       synopsis,
-      createAt: date,
-      updateAt: date,
       chapters,
       originUrl: url,
     };

@@ -1,15 +1,18 @@
-import { Manga as MangaType } from '@scrapper/shared/util-interfaces';
-import { Chapters } from '../chapterExtract/chapterExtract.interfaces';
+import { MangaEntity } from '@scrapper/backend/models';
+import { ChapterExtracted } from '../chapterExtract/chapterExtract.interfaces';
 
-export interface Manga extends Omit<MangaType, 'id' | 'view'> {
-  chapters: Chapters;
-  createAt: Date;
-  updateAt: Date;
-  originUrl: string;
+export interface MangaExtracted
+  extends Omit<
+    MangaEntity,
+    'id' | 'view' | 'chapters' | 'createAt' | 'updateAt'
+  > {
+  chapters: ChapterExtracted[];
 }
 
-export type FindManga = Promise<Manga>;
-export type FindMangasGen = Promise<AsyncGenerator<Manga, void, unknown>>;
+export type FindManga = Promise<MangaExtracted>;
+export type FindMangasGen = Promise<
+  AsyncGenerator<MangaExtracted, void, unknown>
+>;
 export type FindUrlsGen = Promise<AsyncGenerator<string[], void, unknown>>;
 export type FindUrlsByPage = Promise<{ urls: string[]; nextPage: boolean }>;
 export type ShouldIgnoreThisManga = boolean;

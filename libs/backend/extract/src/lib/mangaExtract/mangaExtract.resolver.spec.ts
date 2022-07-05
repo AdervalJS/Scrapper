@@ -1,17 +1,27 @@
 import { Test } from '@nestjs/testing';
 import { MangaExtractResolver } from './mangaExtract.resolver';
 import { PuppeteerConfigModule } from '../PuppeteerConfig/puppeteerConfig.module';
-import { PROFILE, PROFILE_URL } from '../dataFoTest';
+import { PROFILE_URL } from '../dataFoTest';
 import { MangaExtractService } from './mangaExtract.service';
 import { ChapterExtractModule } from '../chapterExtract/chapterExtract.module';
-import { Manga } from './mangaExtract.interfaces';
-import { testChapters } from '../chapterExtract/chapterExtract.resolver.spec';
+import { MangaExtracted } from './mangaExtract.interfaces';
 
-function testManga({ updateAt, createAt, chapters, ...mangaInfo }: Manga) {
-  expect(typeof updateAt === 'object').toBeTruthy();
-  expect(typeof createAt === 'object').toBeTruthy();
-  testChapters(chapters);
-  expect(mangaInfo).toEqual(PROFILE);
+function testManga({ chapters, genres, ...manga }: MangaExtracted) {
+  expect(typeof manga.name === 'string').toEqual(true);
+  expect(typeof manga.image === 'string').toEqual(true);
+  expect(typeof manga.author === 'string').toEqual(true);
+  expect(typeof manga.synopsis === 'string').toEqual(true);
+  expect(typeof manga.originUrl === 'string').toEqual(true);
+
+  genres.forEach((genre) => {
+    expect(typeof genre === 'string').toEqual(true);
+  });
+
+  chapters.forEach((chapter) => {
+    expect(typeof chapter.name === 'string').toBeTruthy();
+    expect(typeof chapter.originUrl === 'string').toBeTruthy();
+    expect(typeof chapter.chapterNumber === 'number').toBeTruthy();
+  });
 }
 
 describe('MangaExtractResolver', () => {
@@ -32,7 +42,7 @@ describe('MangaExtractResolver', () => {
     const manga = await mangaExtractResolver.findManga(PROFILE_URL);
 
     testManga(manga);
-  });
+  }, 40000);
 
   it('extrai as informações e adicionar a data da criação e atualização de todos os mangas', async () => {
     for await (const manga of await mangaExtractResolver.findMangasGen([
