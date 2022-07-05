@@ -3,9 +3,9 @@ import { ChapterExtractResolver } from './chapterExtract.resolver';
 import { PuppeteerConfigModule } from '../PuppeteerConfig/puppeteerConfig.module';
 import { ChapterServiceExtract } from './chapterExtract.service';
 import { PROFILE_URL } from '../dataFoTest';
-import { Chapters } from './chapterExtract.interfaces';
+import { ChapterExtracted } from './chapterExtract.interfaces';
 
-export function testChapters(chapters: Chapters) {
+export function testChapters(chapters: ChapterExtracted[]) {
   chapters.forEach(({ name, chapterNumber, originUrl }) => {
     expect(typeof name === 'string').toBeTruthy();
     expect(typeof chapterNumber === 'number').toBeTruthy();

@@ -1,7 +1,4 @@
-export type Chapters = {
-  name: string;
-  chapterNumber: number;
-  originUrl: string;
-}[];
+import { ChapterModel } from '@scrapper/backend/models';
 
-export type FindChapters = Promise<Chapters>;
+export type ChapterExtracted = Omit<ChapterModel, 'manga' | 'pages' | 'id'>;
+export type FindChapters = Promise<ChapterExtracted[] | []>;

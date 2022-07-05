@@ -1,7 +1,7 @@
 import { Selector } from '../../interfaces/selectors';
-import { Chapters } from './chapterExtract.interfaces';
+import { ChapterExtracted } from './chapterExtract.interfaces';
 
-export const CHAPTERS: Selector<Element[], Chapters> = {
+export const CHAPTERS: Selector<Element[], ChapterExtracted[]> = {
   selector: '#chapterlist > ul > li > div > div > a',
   extractFunction: (elements) =>
     elements
